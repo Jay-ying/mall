@@ -1,5 +1,5 @@
 <template>
-  <tab-bar>
+  <tab-bar class="tab-bar">
     <!-- <router-view></router-view> -->
     <!-- 不传颜色就使用默认值 -->
     <tab-bar-item path="/home" activeColor="#ff5777">
@@ -42,4 +42,7 @@ export default {
 </script>
 
 <style>
+  .tab-bar {
+    z-index: 100;
+  }
 </style>

@@ -6,3 +6,13 @@ export function getHomeMostData() {
     // url: '/recommend'
   })
 }
+
+export function getHomeGoodsData(type, page) {
+  return request({
+    url: '/home/data',
+    params: {
+      type: type,
+      page: page
+    }
+  })
+}
