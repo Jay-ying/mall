@@ -5,6 +5,7 @@ const Home = () => import('views/home/Home.vue')
 const Category = () => import('views/category/Category.vue')
 const Shopcart = () => import('views/shopcart/Shopcart.vue')
 const Profile = () => import('views/profile/Profile.vue')
+const Detail = () => import('views/detail/Detail')
 
 // 防止在重复点击同一个路由时发生uncaught(in promise)的报错
 const originalPush = VueRouter.prototype.push
@@ -44,6 +45,11 @@ const routes = [
     path: '/profile',
     name: 'profile',
     component: Profile
+  },
+  {
+    path: '/detail/:id',
+    name: 'detail',
+    component: Detail
   }
 ]
 

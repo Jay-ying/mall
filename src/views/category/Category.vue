@@ -117,7 +117,7 @@ export default {
   },
   mounted() {
     // this.scroll = new BScroll('.wrapper', {
-
+    console.log(this.$route)
     // }) 
     this.scroll = new BScroll(this.$refs.scrollBox, {
       probeType: 3,
