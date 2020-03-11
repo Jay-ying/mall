@@ -29,7 +29,10 @@ export default {
 
   methods: {
     changeTitle(index) {
-      this.currentIndex = index
+      this.currentIndex = index;
+      
+      // 点击顶部title时，发送出去一个事件，来达到点击谁，显示谁的目的
+      this.$emit('titleClick', index)
     },
 
     backToPrev() {
