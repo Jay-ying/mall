@@ -15,6 +15,7 @@
     </scroll>
     <detail-bottom-bar @addShop="addShopToCart"></detail-bottom-bar>
     <back-top @click.native="backTopClick" v-show="isShowBackTop"></back-top>
+    <!-- <toast :message="message" :is-show="show"></toast> -->
   </div>
 </template>
 
@@ -31,6 +32,7 @@ import DetailBottomBar from "./childComponents/DetailBottomBar";
 import Scroll from "components/common/scroll/Scroll";
 import GoodsList from "components/content/goods/GoodsList";
 // import BackTop from "components/content/backTop/BackTop";
+// import Toast from "components/common/toast/Toast"
 
 import {mapActions} from 'vuex'
 
@@ -60,6 +62,8 @@ export default {
       getThemeTopY: null,
       currentIndex: 0,
       // isShowBackTop: false,
+      message: '',
+      show: false,
     };
   },
   mixins: [itemListenerMixin, backTopMixin],
@@ -74,6 +78,7 @@ export default {
     DetailBottomBar,
     Scroll,
     GoodsList,
+    // Toast
     // BackTop
   },
   methods: {
@@ -155,7 +160,17 @@ export default {
         //   // 通过vuex中完成添加后，返回的状态来提示用户商品添加购物车成功
         // })
         this.addCart(product).then(res => {
-          console.log(res)
+          // console.log(res)
+          // this.show = true;
+          // this.message = res
+          // setTimeout(() => {
+          //   this.show = false;
+          //   this.message = ''
+          // }, 1500)
+
+          // console.log(this.$toast)
+          this.$toast.show(res, 1500)
+          // this.$toast.show()
         })
     }
   },
